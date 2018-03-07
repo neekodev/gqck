@@ -1,4 +1,46 @@
 $(function () {
+    function defMap() {
+
+        var location = new google.maps.LatLng(10.3417, 123.8975);
+
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+            center: location,
+            zoom: 16,
+            panControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+
+        var contentString = '<div class="info-window">' +
+                '<h3>Margo Polo Cebu</h3>' +
+                '<div class="info-content">' +
+                '<p>Your Location.</p>' +
+                '</div>' +
+                '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 400
+        });
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+
+        var styles = [{"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]}, {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "off"}]}, {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]}, {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]}, {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "off"}]}, {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]}, {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#46bcec"}]}];
+
+        map.set('styles', styles);
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', defMap);
 
     function initMap() {
         var collectorLocation = new google.maps.LatLng(10.327344, 123.906180);
@@ -80,11 +122,14 @@ $(function () {
         map.set('styles', styles);
     }
 
-    google.maps.event.addDomListener(window, 'load', initMap);
+    var search = document.getElementById('search');
+    google.maps.event.addDomListener(search, 'click', initMap);
 
     $('#map').hide();
+    $('#search').hide();
     $('#intro').delay(3000).fadeOut("slow", function() {
         $( "#map" ).fadeIn( "slow", function() {
+            $('#search').show();
         });
     });
 });

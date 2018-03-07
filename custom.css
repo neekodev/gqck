@@ -3,6 +3,8 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background-color: #F2F1EF;
+	overflow: hidden;
 }
 body {
     font-family: 'Montserrat', sans-serif;
@@ -12,7 +14,6 @@ h1{
 }
 #map {
 	height: 100%;
-	background-color: #F2F1EF;
 }
 
 .info-window {
@@ -31,5 +32,13 @@ h1{
 
 #intro {
 	height: 100%;
-	background-color: #F2F1EF;
+}
+
+#search {
+  font-size:0.875em;
+  display:block;
+  left:-60px;
+  width:100%;
+  top: 0;
+  font-size: 18px;
 }
