@@ -1,0 +1,138 @@
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	overflow: hidden;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#container {
+	display: inline-block;
+    position: relative;
+    width: 100%;
+    background-size: contain;
+}
+
+h1{
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 40px;
+}
+#map {
+	height: 100%;
+}
+
+.info-window {
+    font-family: 'Montserrat', sans-serif;
+}
+.info-content {
+    color: #999;
+}
+
+img.loader {
+	position: absolute;
+	max-width: 80%;
+	top: 95%;
+	left: 49%;
+}
+
+img.loader:empty
+{
+	top: 90%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+img.logo {
+	position: absolute;
+	max-width: 80%;
+	top: 10%;
+	left: 10%;
+}
+img.logo:empty
+{
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+@media screen and (orientation: portrait) {
+  img.logo { max-width: 90%; }
+}
+
+@media screen and (orientation: landscape) {
+  img.logo { max-height: 90%; }
+}
+
+#intro {
+	height: 100%;
+}
+
+#search {
+	font-size:1em;
+	position: fixed;
+	bottom: 0;
+	background-color: #01C653;
+	color: white;
+	text-align: center;
+	margin: 6px;
+	width: 99.4%;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 10px;
+}
+
+#footer {
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	background-color: #01C653;
+}
+
+#schedule {
+	margin-top: 50px;
+}
+
+#header-center {
+	text-align: center;
+	margin-top: 50px;
+}
+
+#overview {
+	margin: 10px;
+}
+
+.card {
+    text-align: center;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #01C653;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    width: 200px;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
